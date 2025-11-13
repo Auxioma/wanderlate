@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CurrencyType;
 use Symfony\Component\Form\Extension\Core\Type\LanguageType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -201,11 +202,34 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+            ->add('marketing', CheckboxType::class, [
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'You should agree to our terms.',
+                    ]),
+                ],
+            ])
+            ->add('plainPassword', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'mapped' => false,
+                'invalid_message' => 'Les mots de passe doivent être identiques.',
+                'first_options'  => [
+                    'label' => false,
+                    'attr' => [
+                        'autocomplete' => 'new-password',
+                        'class' => 'form-control ps-5 pe-5',
+                        'placeholder' => 'Mot de passe (minimum 6 caractères)',
+                    ],
+                ],
+                'second_options' => [
+                    'label' => false,
+                    'attr' => [
+                        'autocomplete' => 'new-password',
+                        'class' => 'form-control ps-5 pe-5',
+                        'placeholder' => 'Confirmez le mot de passe',
+                    ],
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
@@ -213,11 +237,11 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'min' => 6,
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
                 ],
             ])
+
         ;
     }
 
