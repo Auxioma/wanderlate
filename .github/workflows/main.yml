@@ -42,3 +42,4 @@ jobs:
           php bin/console cache:clear  # Vide le cache de l'application
           php bin/console cache:warmup  # Préchauffe le cache pour de meilleures performances
           php composer.phar dump-env prod  # Prépare l'environnement de production
+          "
