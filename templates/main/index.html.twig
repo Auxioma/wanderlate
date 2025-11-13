@@ -1,9 +1,2276 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Hello MainController!
+{% endblock %}
 
 {% block body %}
 
-a
+<header class="bg-white shadow-sm position-relative z-3">
+  <div class="container px-3 px-sm-4 px-lg-5">
+    <div class="d-flex justify-content-between align-items-center" style="height: 64px;">
+      
+      <!-- Logo -->
+      <div class="d-flex align-items-center">
+        <a href="/" class="fw-bold text-decoration-none">
+          <span class="logo-text-brand-blue">wanderlate</span><span class="logo-text-brand-red">.com</span>
+        </a>
+      </div>
 
+      <!-- Mobile nav -->
+      <nav class="d-flex d-md-none align-items-center gap-3">
+        <!-- Bouton app (mobile) -->
+        <button
+          class="d-inline-flex align-items-center gap-2 btn btn-sm btn-light border border-dark rounded-pill fw-medium text-muted px-3 py-1">
+          <span>Obtenir l'app</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="text-brand-blue">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" x2="12" y1="15" y2="3"></line>
+          </svg>
+        </button>
+
+        <!-- Icône compte (mobile) -->
+        <button class="btn p-0 text-brand-blue">
+          <div class="rounded-circle border border-2 border-brand-blue d-flex align-items-center justify-content-center"
+               style="width: 22px; height: 22px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="mt-1">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </button>
+      </nav>
+
+      <!-- Desktop nav -->
+      <nav class="d-none d-md-flex align-items-center gap-4">
+
+        <!-- Bouton app (desktop) -->
+        <button
+          class="d-inline-flex align-items-center gap-2 btn btn-sm btn-light border rounded-pill px-4 py-2 text-body">
+          <span>Obtenir l'app</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="text-brand-blue">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" x2="12" y1="15" y2="3"></line>
+          </svg>
+        </button>
+
+        <!-- Langue -->
+        <div class="dropdown">
+          <button class="btn btn-sm btn-link text-muted text-decoration-none d-inline-flex align-items-center gap-1 dropdown-toggle"
+                  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span>🇫🇷</span>
+            <span>Français</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item active">🇫🇷 Français</button></li>
+            <li><button class="dropdown-item">🇬🇧 English</button></li>
+          </ul>
+        </div>
+
+        <!-- Liens à droite -->
+        <button class="btn btn-link text-body text-decoration-none px-0 hover-brand-red">
+          Publier votre annonce
+        </button>
+
+        <a href="https://support.wanderlate.com" target="_blank" rel="noopener noreferrer"
+           class="btn btn-link text-body text-decoration-none px-0 hover-brand-red">
+          Assistance
+        </a>
+
+        <a href="/fr/trips"
+           class="btn btn-link text-body text-decoration-none px-0 hover-brand-red">
+          Voyages
+        </a>
+
+        <button class="btn btn-link text-body text-decoration-none px-0 hover-brand-red">
+          Se connecter
+        </button>
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+<style>
+  .logo-text-brand-blue { color: #0d6efd; }       /* ajustez si besoin */
+  .logo-text-brand-red { color: #dc3545; }
+
+  .border-brand-blue { border-color: #0d6efd !important; }
+  .text-brand-blue { color: #0d6efd !important; }
+
+  .hover-brand-red:hover {
+    color: #dc3545 !important;
+  }
+</style>
+
+
+	<main class="container">
+
+		<section>
+
+			<div class="container">
+				<ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
+
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active w-100 text-center" data-bs-toggle="tab" data-bs-target="#home" type="button">
+							Séjour
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link w-100 text-center" data-bs-toggle="tab" data-bs-target="#profile" type="button">
+							Vols
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link w-100 text-center" data-bs-toggle="tab" data-bs-target="#voitures" type="button">
+							Voitures
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link w-100 text-center" data-bs-toggle="tab" data-bs-target="#formules" type="button">
+							Formules
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link w-100 text-center" data-bs-toggle="tab" data-bs-target="#activites" type="button">
+							Activités
+						</button>
+					</li>
+				</ul>
+
+				<div class="tab-content p-3 border border-top-0" id="myTabContent">
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div>
+							<div
+								class="row g-3 mb-4">
+
+								<!-- Destination -->
+								<div class="col-md-3">
+									<label class="form-label text-xs mb-1">Où allez-vous ?</label>
+									<div class="position-relative">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="position-absolute top-50 translate-middle-y ms-2 text-muted lucide lucide-map-pin" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+											<circle cx="12" cy="10" r="3"></circle>
+										</svg>
+
+										<input type="text" class="form-control ps-5" placeholder="Où allez-vous ?" autocomplete="off">
+
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="position-absolute top-50 translate-middle-y me-2 end-0 text-muted lucide lucide-chevron-down" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="m6 9 6 6 6-6"></path>
+										</svg>
+									</div>
+								</div>
+
+								<!-- Dates -->
+								<div class="col-md-3">
+									<label class="form-label text-xs mb-1">Arrivée / Départ</label>
+									<div class="position-relative">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="position-absolute top-50 translate-middle-y ms-2 text-muted lucide lucide-calendar" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M8 2v4"></path>
+											<path d="M16 2v4"></path>
+											<rect width="18" height="18" x="3" y="4" rx="2"></rect>
+											<path d="M3 10h18"></path>
+										</svg>
+
+										<input id="daterange" type="text" class="form-control ps-5" placeholder="Sélectionner des dates" readonly>
+									</div>
+								</div>
+
+
+								<!-- Voyageurs -->
+								<div
+									class="col-md-3">
+									<!-- Bloc voyageurs + chambres -->
+									<div
+										class="position-relative d-inline-block">
+										<!-- Icône + input -->
+										<div class="position-relative">
+											<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="position-absolute text-secondary" style="left: 12px; top: 50%; transform: translateY(-50%);">
+												<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+												<circle cx="9" cy="7" r="4"></circle>
+												<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+												<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+											</svg>
+											<label class="form-label text-xs mb-1">Arrivée / Départ</label>
+											<input type="text" id="travelersInput" class="form-control ps-5 py-2" readonly value="2 personnes, 1 chambre">
+										</div>
+
+										<!-- Dropdown voyageurs -->
+										<div
+											id="travelersDropdown" class="position-absolute bg-white border rounded-3 shadow p-3 mt-1 d-none" style="min-width: 320px; z-index: 1050; right: 0;">
+											<!-- Adultes -->
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<div>
+													<div class="small fw-semibold text-dark">Adultes</div>
+												</div>
+												<div class="d-flex align-items-center gap-2">
+													<button type="button" class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center btn-counter" data-target="adults" data-action="minus">
+														<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M5 12h14"></path>
+														</svg>
+													</button>
+													<span id="count-adults" class="small fw-semibold text-center" style="width: 24px;">2</span>
+													<button type="button" class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center btn-counter" data-target="adults" data-action="plus">
+														<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M5 12h14"></path>
+															<path d="M12 5v14"></path>
+														</svg>
+													</button>
+												</div>
+											</div>
+
+											<!-- Enfants -->
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<div>
+													<div class="small fw-semibold text-dark d-flex align-items-center">
+														Enfants
+														<span class="text-muted ms-1" style="font-size: 0.75rem;">(0-17 ans)</span>
+													</div>
+												</div>
+												<div class="d-flex align-items-center gap-2">
+													<button type="button" class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center btn-counter" data-target="children" data-action="minus">
+														<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M5 12h14"></path>
+														</svg>
+													</button>
+													<span id="count-children" class="small fw-semibold text-center" style="width: 24px;">0</span>
+													<button type="button" class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center btn-counter" data-target="children" data-action="plus">
+														<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M5 12h14"></path>
+															<path d="M12 5v14"></path>
+														</svg>
+													</button>
+												</div>
+											</div>
+
+											<!-- Chambres -->
+											<div class="d-flex align-items-center justify-content-between mb-2">
+												<div>
+													<div class="small fw-semibold text-dark">Chambres</div>
+												</div>
+												<div class="d-flex align-items-center gap-2">
+													<button type="button" class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center btn-counter" data-target="rooms" data-action="minus">
+														<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M5 12h14"></path>
+														</svg>
+													</button>
+													<span id="count-rooms" class="small fw-semibold text-center" style="width: 24px;">1</span>
+													<button type="button" class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center btn-counter" data-target="rooms" data-action="plus">
+														<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M5 12h14"></path>
+															<path d="M12 5v14"></path>
+														</svg>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<!-- Bouton -->
+								<div class="col-md-3 d-flex align-items-end">
+									<button class="btn w-100 py-2 btn-primary d-flex justify-content-center align-items-center">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="me-2 lucide lucide-search" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<circle cx="11" cy="11" r="8"></circle>
+											<path d="m21 21-4.3-4.3"></path>
+										</svg>
+										Rechercher
+									</button>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+						Activités
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+		<section class="bg-primary text-white rounded p-4 p-md-5 mb-4">
+			<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
+
+				<div class="d-flex align-items-center text-center text-md-start">
+					<img src="https://a.travel-assets.com/egds/marks/onekey__standard__always_light.svg" alt="OneKey" class="me-3" width="48" height="48">
+
+					<div>
+						<p class="small fw-semibold mb-1">
+							Économisez 10% minimum sur plus de 100 000 hôtels dans le monde grâce aux Prix membres.
+						</p>
+						<p class="small fw-semibold d-none d-md-block mb-0">
+							Créez un compte gratuit pour accéder à ces prix exclusifs et bien plus encore.
+						</p>
+					</div>
+				</div>
+
+				<button type="button" class="btn btn-danger fw-semibold px-4 py-2 w-100 w-md-auto">
+					Se connecter
+				</button>
+
+			</section>
+
+			<section
+				class="mb-4 mb-md-5">
+
+				<!-- Mobile : carousel -->
+				<div id="advantagesCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+					<div
+						class="carousel-inner pb-3">
+
+						<!-- Slide 1 -->
+						<div class="carousel-item active">
+							<div class="mx-auto" style="max-width: 320px; height: 160px;">
+								<div class="h-100 rounded overflow-hidden position-relative">
+									<div class="row g-0 h-100">
+										<div class="col-7 bg-primary text-white p-3 d-flex">
+											<h3 class="fs-6 fw-semibold mb-0">
+												Obtenez des alertes si le prix des vols baisse
+											</h3>
+										</div>
+										<div class="col-5 position-relative">
+											<img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Obtenez des alertes si le prix des vols baisse" class="w-100 h-100" style="object-fit: cover;">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 2 -->
+						<div class="carousel-item">
+							<div class="mx-auto" style="max-width: 320px; height: 160px;">
+								<div class="h-100 rounded overflow-hidden position-relative">
+									<div class="row g-0 h-100">
+										<div class="col-7 bg-primary text-white p-3 d-flex">
+											<h3 class="fs-6 fw-semibold mb-0">
+												Vous pouvez faire des économies en combinant vol et hôtel
+											</h3>
+										</div>
+										<div class="col-5 position-relative">
+											<img src="https://images.pexels.com/photos/3769121/pexels-photo-3769121.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vous pouvez faire des économies en combinant vol et hôtel" class="w-100 h-100" style="object-fit: cover;">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 3 -->
+						<div class="carousel-item">
+							<div class="mx-auto" style="max-width: 320px; height: 160px;">
+								<div class="h-100 rounded overflow-hidden position-relative">
+									<div class="row g-0 h-100">
+										<div class="col-7 bg-primary text-white p-3 d-flex">
+											<h3 class="fs-6 fw-semibold mb-0">
+												Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde
+											</h3>
+										</div>
+										<div class="col-5 position-relative">
+											<img src="https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde" class="w-100 h-100" style="object-fit: cover;">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<button class="carousel-control-prev" type="button" data-bs-target="#advantagesCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Précédent</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#advantagesCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Suivant</span>
+					</button>
+				</div>
+
+				<!-- Desktop : grille -->
+				<div class="d-none d-md-block">
+					<div
+						class="row g-3">
+
+						<!-- Carte 1 -->
+						<div class="col-md-4">
+							<div class="h-100 rounded overflow-hidden position-relative">
+								<div class="row g-0 h-100">
+									<div class="col-7 bg-primary text-white p-3 d-flex">
+										<h3 class="fs-6 fw-semibold mb-0">
+											Obtenez des alertes si le prix des vols baisse
+										</h3>
+									</div>
+									<div class="col-5 position-relative">
+										<img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Obtenez des alertes si le prix des vols baisse" class="w-100 h-100" style="object-fit: cover;">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Carte 2 -->
+						<div class="col-md-4">
+							<div class="h-100 rounded overflow-hidden position-relative">
+								<div class="row g-0 h-100">
+									<div class="col-7 bg-primary text-white p-3 d-flex">
+										<h3 class="fs-6 fw-semibold mb-0">
+											Vous pouvez faire des économies en combinant vol et hôtel
+										</h3>
+									</div>
+									<div class="col-5 position-relative">
+										<img src="https://images.pexels.com/photos/3769121/pexels-photo-3769121.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vous pouvez faire des économies en combinant vol et hôtel" class="w-100 h-100" style="object-fit: cover;">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Carte 3 -->
+						<div class="col-md-4">
+							<div class="h-100 rounded overflow-hidden position-relative">
+								<div class="row g-0 h-100">
+									<div class="col-7 bg-primary text-white p-3 d-flex">
+										<h3 class="fs-6 fw-semibold mb-0">
+											Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde
+										</h3>
+									</div>
+									<div class="col-5 position-relative">
+										<img src="https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde" class="w-100 h-100" style="object-fit: cover;">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</section>
+
+		</section>
+
+		<section class="mb-5">
+			<h2 class="fs-3 fw-bold text-dark mb-4">Types de propriétés</h2>
+
+			<!-- MOBILE : CAROUSEL -->
+			<div id="propertyCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+				<div
+					class="carousel-inner pb-3">
+
+					<!-- Slide template -->
+					<div class="carousel-item active">
+						<div class="mx-auto" style="width: 190px; height: 260px;">
+							<div class="position-relative rounded overflow-hidden h-100">
+								<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appartement" style="object-fit: cover;">
+								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
+									Appartement
+								</div>
+								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="mx-auto" style="width: 190px; height: 260px;">
+							<div class="position-relative rounded overflow-hidden h-100">
+								<img src="https://medias.logishotels.com/property-images/196512/facade/retro/grand/logis-hotel-la-ferme-de-flaran-facade-valence-sur-baise-399662.jpg" class="w-100 h-100" alt="Ferme" style="object-fit: cover;">
+								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
+									Ferme
+								</div>
+								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="mx-auto" style="width: 190px; height: 260px;">
+							<div class="position-relative rounded overflow-hidden h-100">
+								<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/591469727.jpg?k=2c87b78d780a32ea7a14b8c82cbc276e3f8a76482065da6ed5416015c922649b&o=&hp=1" class="w-100 h-100" alt="Bateau-maison" style="object-fit: cover;">
+								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
+									Bateau-maison
+								</div>
+								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="mx-auto" style="width: 190px; height: 260px;">
+							<div class="position-relative rounded overflow-hidden h-100">
+								<img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appart'hôtel" style="object-fit: cover;">
+								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
+									Appart'hôtel
+								</div>
+								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="mx-auto" style="width: 190px; height: 260px;">
+							<div class="position-relative rounded overflow-hidden h-100">
+								<img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/7c/5d/38/hotel-spa-vilamont.jpg" class="w-100 h-100" alt="Spa" style="object-fit: cover;">
+								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
+									Spa
+								</div>
+								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+					<span class="visually-hidden">Précédent</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+					<span class="visually-hidden">Suivant</span>
+				</button>
+			</div>
+
+			<!-- DESKTOP : GRID -->
+			<div class="d-none d-md-grid">
+				<div
+					class="row g-4">
+
+					<!-- Card -->
+					<div class="col-6 col-lg-2">
+						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
+							<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appartement" style="object-fit: cover;">
+							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
+								Appartement
+							</div>
+						</div>
+					</div>
+
+					<div class="col-6 col-lg-2">
+						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
+							<img src="https://medias.logishotels.com/property-images/196512/facade/retro/grand/logis-hotel-la-ferme-de-flaran-facade-valence-sur-baise-399662.jpg" class="w-100 h-100" alt="Ferme" style="object-fit: cover;">
+							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
+								Ferme
+							</div>
+						</div>
+					</div>
+
+					<div class="col-6 col-lg-2">
+						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
+							<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/591469727.jpg?k=2c87b78d780a32ea7a14b8c82cbc276e3f8a76482065da6ed5416015c922649b&o=&hp=1" class="w-100 h-100" alt="Bateau-maison" style="object-fit: cover;">
+							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
+								Bateau-maison
+							</div>
+						</div>
+					</div>
+
+					<div class="col-6 col-lg-2">
+						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
+							<img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appart'hôtel" style="object-fit: cover;">
+							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
+								Appart'hôtel
+							</div>
+						</div>
+					</div>
+
+					<div class="col-6 col-lg-2">
+						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
+							<img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/7c/5d/38/hotel-spa-vilamont.jpg" class="w-100 h-100" alt="Spa" style="object-fit: cover;">
+							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
+							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
+								Spa
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<section
+			class="mb-5">
+
+			<!-- MOBILE -->
+			<div class="d-md-none">
+				<div class="rounded-top bg-cover bg-center" style="
+					      height: 190px;
+					      background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80');
+					    "></div>
+
+				<div class="bg-white rounded-bottom p-4 shadow">
+					<h2 class="fs-3 fw-semibold text-dark mb-3">Gagnants du bord de l'eau</h2>
+
+					<p class="text-muted small mb-4">
+						Détendez-vous, relaxez-vous et amusez-vous au bord de l'eau avec votre équipage.
+					</p>
+
+					<button type="button" class="btn btn-danger px-3 py-2 fw-medium small">
+						Réserver un séjour au bord de l'eau
+					</button>
+				</div>
+			</div>
+
+			<!-- DESKTOP -->
+			<div class="d-none d-md-block position-relative rounded overflow-hidden" style="height: 500px;">
+				<div class="position-absolute inset-0 w-100 h-100 bg-cover bg-center" style="
+						      background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80');
+						    ">
+					<div class="position-absolute w-100 h-100" style="
+						        background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
+						      "></div>
+				</div>
+
+				<div class="position-absolute start-0 bottom-0 mb-4 ms-4" style="max-width: 420px;">
+					<div class="bg-white rounded p-4 shadow-lg">
+						<h2 class="fs-3 fw-semibold text-dark mb-3">Gagnants du bord de l'eau</h2>
+
+						<p class="text-muted mb-4 small">
+							Détendez-vous, relaxez-vous et amusez-vous au bord de l'eau avec votre équipage.
+						</p>
+
+						<button type="button" class="btn btn-danger px-4 py-2 fw-light small">
+							Réserver un séjour au bord de l'eau
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<section class="mb-5">
+			<h2 class="fs-3 fw-bold text-dark mb-4 mb-md-3">
+				Partez à la découverte de nos destinations
+			</h2>
+
+			<!-- FILTRES MOBILE -->
+			<div class="d-md-none bg-light rounded mb-4">
+				<div class="d-flex">
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						<span class="d-block lh-sm">Plage</span>
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						<span class="d-block lh-sm">Culture</span>
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						<span class="d-block lh-sm">Ski</span>
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						<span class="d-block lh-sm">Famille</span>
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-white bg-danger">
+						<span class="d-block lh-sm">Bien-être et relaxation</span>
+					</button>
+				</div>
+			</div>
+
+			<!-- FILTRES DESKTOP -->
+			<div class="d-none d-md-block bg-light rounded mb-4">
+				<div class="d-flex">
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						Plage
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						Culture
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						Ski
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-secondary">
+						Famille
+					</button>
+					<button class="btn btn-sm flex-fill border-0 text-white bg-danger">
+						Bien-être et relaxation
+					</button>
+				</div>
+			</div>
+
+			<!-- MOBILE : CAROUSEL -->
+			<div id="destinationsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+				<div
+					class="carousel-inner pb-3">
+
+					<!-- Santorin -->
+					<div class="carousel-item active">
+						<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 12rem;">
+							<div style="height: 7rem; overflow: hidden;">
+								<img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSnRSFjgY82h3WZqMeVdugIJBnjnajfLCU7ChWbVVrH9vWKjm5Il-0cpjvboiAt0vcQU1YH-rNQmwgP8K-9ty7_jgwrUXtY9YupwajWJA" class="w-100 h-100" style="object-fit: cover;" alt="Santorin">
+							</div>
+							<div class="card-body p-3">
+								<h3 class="h6 fw-semibold mb-1">Santorin</h3>
+								<p class="small text-muted mb-2">Grèce</p>
+								<div class="d-flex justify-content-between align-items-baseline">
+									<div>
+										<span class="fs-6 fw-medium text-danger">170 €</span>
+										<p class="text-muted small mb-0">tarif moyen par nuit</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tokyo -->
+					<div class="carousel-item">
+						<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 12rem;">
+							<div style="height: 7rem; overflow: hidden;">
+								<img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTGthzE2pLS9iykg6QfQeTNlc3eBUH-X7bCZ59054j6QSNJ-53wXXQX7zeOCIL7DOWrnosXlnWQxavOQ1hrfox0TnynMmU7rwUE-9R-eg" class="w-100 h-100" style="object-fit: cover;" alt="Tokyo">
+							</div>
+							<div class="card-body p-3">
+								<h3 class="h6 fw-semibold mb-1">Tokyo</h3>
+								<p class="small text-muted mb-2">Japon</p>
+								<div class="d-flex justify-content-between align-items-baseline">
+									<div>
+										<span class="fs-6 fw-medium text-danger">180 €</span>
+										<p class="text-muted small mb-0">tarif moyen par nuit</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Bali Wellness -->
+					<div class="carousel-item">
+						<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 12rem;">
+							<div style="height: 7rem; overflow: hidden;">
+								<img src="https://www.luxewellnessclub.com/wp-content/uploads/2019/01/Five-Elements-Wellness-Resort-Bali-spa.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Bali Wellness">
+							</div>
+							<div class="card-body p-3">
+								<h3 class="h6 fw-semibold mb-1">Bali Wellness</h3>
+								<p class="small text-muted mb-2">Indonésie</p>
+								<div class="d-flex justify-content-between align-items-baseline">
+									<div>
+										<span class="fs-6 fw-medium text-danger">95 €</span>
+										<p class="text-muted small mb-0">tarif moyen par nuit</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tenerife -->
+					<div class="carousel-item">
+						<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 12rem;">
+							<div style="height: 7rem; overflow: hidden;">
+								<img src="https://images.winalist.com/blog/wp-content/uploads/2025/05/29095524/adobestock-246119275-1500x1023.jpeg" class="w-100 h-100" style="object-fit: cover;" alt="Tenerife">
+							</div>
+							<div class="card-body p-3">
+								<h3 class="h6 fw-semibold mb-1">Tenerife</h3>
+								<p class="small text-muted mb-2">Espagne</p>
+								<div class="d-flex justify-content-between align-items-baseline">
+									<div>
+										<span class="fs-6 fw-medium text-danger">120 €</span>
+										<p class="text-muted small mb-0">tarif moyen par nuit</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Mykonos -->
+					<div class="carousel-item">
+						<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 12rem;">
+							<div style="height: 7rem; overflow: hidden;">
+								<img src="https://content.r9cdn.net/rimg/dimg/63/30/85cee65b-city-46053-1673284fa31.jpg?width=1366&height=768&xhint=1272&yhint=1072&crop=true" class="w-100 h-100" style="object-fit: cover;" alt="Mykonos">
+							</div>
+							<div class="card-body p-3">
+								<h3 class="h6 fw-semibold mb-1">Mykonos</h3>
+								<p class="small text-muted mb-2">Grèce</p>
+								<div class="d-flex justify-content-between align-items-baseline">
+									<div>
+										<span class="fs-6 fw-medium text-danger">160 €</span>
+										<p class="text-muted small mb-0">tarif moyen par nuit</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Malte -->
+					<div class="carousel-item">
+						<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 12rem;">
+							<div style="height: 7rem; overflow: hidden;">
+								<img src="https://a.storyblok.com/f/112937/755x500/6eb4e56b9c/malte.JPG/m/620x0/filters:quality(70)/" class="w-100 h-100" style="object-fit: cover;" alt="Malte">
+							</div>
+							<div class="card-body p-3">
+								<h3 class="h6 fw-semibold mb-1">Malte</h3>
+								<p class="small text-muted mb-2">Malte</p>
+								<div class="d-flex justify-content-between align-items-baseline">
+									<div>
+										<span class="fs-6 fw-medium text-danger">140 €</span>
+										<p class="text-muted small mb-0">tarif moyen par nuit</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<button class="carousel-control-prev" type="button" data-bs-target="#destinationsCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+					<span class="visually-hidden">Précédent</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#destinationsCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+					<span class="visually-hidden">Suivant</span>
+				</button>
+			</div>
+
+			<!-- DESKTOP : LISTE HORIZONTALE -->
+			<div class="d-none d-md-block position-relative">
+				<div
+					class="d-flex gap-3 overflow-auto pb-3" style="scrollbar-width: none; -ms-overflow-style: none;">
+					<!-- Santorin -->
+					<div class="card border-0 shadow-lg rounded-4 flex-shrink-0" style="width: 260px;">
+						<div style="height: 9rem; overflow: hidden;">
+							<img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSnRSFjgY82h3WZqMeVdugIJBnjnajfLCU7ChWbVVrH9vWKjm5Il-0cpjvboiAt0vcQU1YH-rNQmwgP8K-9ty7_jgwrUXtY9YupwajWJA" class="w-100 h-100" style="object-fit: cover;" alt="Santorin">
+						</div>
+						<div class="card-body p-4">
+							<h3 class="h5 fw-semibold mb-1">Santorin</h3>
+							<p class="small text-muted mb-2">Grèce</p>
+							<div class="d-flex justify-content-between align-items-baseline">
+								<div>
+									<span class="fs-6 fw-medium text-danger">170 €</span>
+									<p class="text-muted small mb-0">tarif moyen par nuit</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tokyo -->
+					<div class="card border-0 shadow-lg rounded-4 flex-shrink-0" style="width: 260px;">
+						<div style="height: 9rem; overflow: hidden;">
+							<img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTGthzE2pLS9iykg6QfQeTNlc3eBUH-X7bCZ59054j6QSNJ-53wXXQX7zeOCIL7DOWrnosXlnWQxavOQ1hrfox0TnynMmU7rwUE-9R-eg" class="w-100 h-100" style="object-fit: cover;" alt="Tokyo">
+						</div>
+						<div class="card-body p-4">
+							<h3 class="h5 fw-semibold mb-1">Tokyo</h3>
+							<p class="small text-muted mb-2">Japon</p>
+							<div class="d-flex justify-content-between align-items-baseline">
+								<div>
+									<span class="fs-6 fw-medium text-danger">180 €</span>
+									<p class="text-muted small mb-0">tarif moyen par nuit</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Bali Wellness -->
+					<div class="card border-0 shadow-lg rounded-4 flex-shrink-0" style="width: 260px;">
+						<div style="height: 9rem; overflow: hidden;">
+							<img src="https://www.luxewellnessclub.com/wp-content/uploads/2019/01/Five-Elements-Wellness-Resort-Bali-spa.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Bali Wellness">
+						</div>
+						<div class="card-body p-4">
+							<h3 class="h5 fw-semibold mb-1">Bali Wellness</h3>
+							<p class="small text-muted mb-2">Indonésie</p>
+							<div class="d-flex justify-content-between align-items-baseline">
+								<div>
+									<span class="fs-6 fw-medium text-danger">95 €</span>
+									<p class="text-muted small mb-0">tarif moyen par nuit</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tenerife -->
+					<div class="card border-0 shadow-lg rounded-4 flex-shrink-0" style="width: 260px;">
+						<div style="height: 9rem; overflow: hidden;">
+							<img src="https://images.winalist.com/blog/wp-content/uploads/2025/05/29095524/adobestock-246119275-1500x1023.jpeg" class="w-100 h-100" style="object-fit: cover;" alt="Tenerife">
+						</div>
+						<div class="card-body p-4">
+							<h3 class="h5 fw-semibold mb-1">Tenerife</h3>
+							<p class="small text-muted mb-2">Espagne</p>
+							<div class="d-flex justify-content-between align-items-baseline">
+								<div>
+									<span class="fs-6 fw-medium text-danger">120 €</span>
+									<p class="text-muted small mb-0">tarif moyen par nuit</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Mykonos -->
+					<div class="card border-0 shadow-lg rounded-4 flex-shrink-0" style="width: 260px;">
+						<div style="height: 9rem; overflow: hidden;">
+							<img src="https://content.r9cdn.net/rimg/dimg/63/30/85cee65b-city-46053-1673284fa31.jpg?width=1366&height=768&xhint=1272&yhint=1072&crop=true" class="w-100 h-100" style="object-fit: cover;" alt="Mykonos">
+						</div>
+						<div class="card-body p-4">
+							<h3 class="h5 fw-semibold mb-1">Mykonos</h3>
+							<p class="small text-muted mb-2">Grèce</p>
+							<div class="d-flex justify-content-between align-items-baseline">
+								<div>
+									<span class="fs-6 fw-medium text-danger">160 €</span>
+									<p class="text-muted small mb-0">tarif moyen par nuit</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Malte -->
+					<div class="card border-0 shadow-lg rounded-4 flex-shrink-0" style="width: 260px;">
+						<div style="height: 9rem; overflow: hidden;">
+							<img src="https://a.storyblok.com/f/112937/755x500/6eb4e56b9c/malte.JPG/m/620x0/filters:quality(70)/" class="w-100 h-100" style="object-fit: cover;" alt="Malte">
+						</div>
+						<div class="card-body p-4">
+							<h3 class="h5 fw-semibold mb-1">Malte</h3>
+							<p class="small text-muted mb-2">Malte</p>
+							<div class="d-flex justify-content-between align-items-baseline">
+								<div>
+									<span class="fs-6 fw-medium text-danger">140 €</span>
+									<p class="text-muted small mb-0">tarif moyen par nuit</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<section
+			class="position-relative pt-4 mb-4 mb-md-5 rounded-4 overflow-hidden text-white">
+			<!-- Background -->
+			<div class="position-absolute top-0 start-0 w-100 h-100">
+				<div class="w-100 h-100" style="
+					        background-image: url('https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg');
+					        background-size: cover;
+					        background-position: center;
+					      "></div>
+				<div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,.4);"></div>
+			</div>
+
+			<div
+				class="position-relative z-1 container py-4">
+				<!-- Titre / dates -->
+				<div class="rounded-4 p-3 p-md-4 mb-4 shadow text-white">
+					<h2 class="fs-3 fw-semibold mb-2">
+						Nos meilleures offres sur la base de votre recherche récente
+					</h2>
+					<p class="mb-0">23 nov. - 28 nov.</p>
+				</div>
+
+				<!-- MOBILE : CAROUSEL -->
+				<div id="bestDealsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+					<div
+						class="carousel-inner">
+
+						<!-- Slide 1 -->
+						<div class="carousel-item active">
+							<div class="card border-0 bg-transparent text-white mx-auto shadow rounded-4" style="width: 14rem;">
+								<div class="position-relative overflow-hidden" style="height: 10rem;">
+									<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/8f/d1/6e/caption.jpg?w=900&h=500&s=1" class="w-100 h-100" style="object-fit: cover;" alt="Villa de Luxe avec Vue Mer - 5 Chambres 5 Salles de...">
+									<div class="position-absolute top-2 start-2 bg-danger px-2 py-1 rounded fw-medium small d-flex align-items-center">
+										<span class="me-1">★</span>
+										Accès VIP
+									</div>
+									<div class="position-absolute bottom-2 end-2 bg-dark bg-opacity-75 px-2 py-1 rounded small">
+										1/3
+									</div>
+								</div>
+
+								<div class="card-body px-3 pt-3 pb-4">
+									<p class="small mb-1">Saint-Tropez, France</p>
+									<h3 class="h6 fw-semibold mb-2">
+										Villa de Luxe avec Vue Mer - 5 Chambres 5 Salles de...
+									</h3>
+
+									<div class="d-flex align-items-center mb-3">
+										<span class="bg-success px-2 py-1 rounded small me-2">9.8</span>
+										<span class="small">Exceptionnel
+											<span class="small">(127 avis)</span>
+										</span>
+									</div>
+
+									<div class="mb-1">
+										<span class="fs-5 fw-semibold">545 €</span>
+										<span class="ms-2 text-decoration-line-through">700 €</span>
+									</div>
+									<p class="small mb-2">109 € par nuit</p>
+
+									<button type="button" class="btn btn-info btn-sm d-flex align-items-center px-3">
+										<span class="me-2 d-inline-flex align-items-center justify-content-center" style="width: 1rem; height: 1rem;">
+											<svg class="w-100 h-100" viewbox="0 0 16 16" fill="currentColor">
+												<path d="M8 0L10.5 5.5L16 8L10.5 10.5L8 16L5.5 10.5L0 8L5.5 5.5L8 0Z"></path>
+											</svg>
+										</span>
+										Prix membre disponible
+									</button>
+
+									<p class="text-white-50 small mb-0 mt-2">taxes et frais compris</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 2 -->
+						<div class="carousel-item">
+							<div class="card border-0 bg-transparent text-white mx-auto shadow rounded-4" style="width: 14rem;">
+								<div class="position-relative overflow-hidden" style="height: 10rem;">
+									<img src="https://www.momondo.fr/rimg/himg/10/a9/67/expedia_group-164551-45734695-180382.jpg?width=968&height=607&crop=true" class="w-100 h-100" style="object-fit: cover;" alt="Resort Tropical Bali - Piscine et Spa">
+									<div class="position-absolute bottom-2 end-2 bg-dark bg-opacity-75 px-2 py-1 rounded small">
+										1/2
+									</div>
+								</div>
+
+								<div class="card-body px-3 pt-3 pb-4">
+									<p class="small mb-1">Bali, Indonésie</p>
+									<h3 class="h6 fw-semibold mb-2">
+										Resort Tropical Bali - Piscine et Spa
+									</h3>
+
+									<div class="d-flex align-items-center mb-3">
+										<span class="bg-success px-2 py-1 rounded small me-2">9.2</span>
+										<span class="small">Merveilleux
+											<span class="small">(98 avis)</span>
+										</span>
+									</div>
+
+									<div class="mb-1">
+										<span class="fs-5 fw-semibold">320 €</span>
+										<span class="ms-2 text-decoration-line-through">400 €</span>
+									</div>
+									<p class="small mb-2">80 € par nuit</p>
+
+									<button type="button" class="btn btn-info btn-sm d-flex align-items-center px-3">
+										<span class="me-2 d-inline-flex align-items-center justify-content-center" style="width: 1rem; height: 1rem;">
+											<svg class="w-100 h-100" viewbox="0 0 16 16" fill="currentColor">
+												<path d="M8 0L10.5 5.5L16 8L10.5 10.5L8 16L5.5 10.5L0 8L5.5 5.5L8 0Z"></path>
+											</svg>
+										</span>
+										Prix membre disponible
+									</button>
+
+									<p class="text-white-50 small mb-0 mt-2">taxes et frais compris</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 3 (exemple Chalet) -->
+						<div class="carousel-item">
+							<div class="card border-0 bg-transparent text-white mx-auto shadow rounded-4" style="width: 14rem;">
+								<div class="position-relative overflow-hidden" style="height: 10rem;">
+									<img src="https://cdn.lecollectionist.com/__lecollectionist__/production/houses/6426/photos/baStxBqCSU271r5B0qX3_0346c6e3-4f53-46df-f048-159516d8eafa.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Chalet Alpin Suisse - Vue Montagne">
+									<div class="position-absolute top-2 start-2 bg-danger px-2 py-1 rounded fw-medium small d-flex align-items-center">
+										<span class="me-1">★</span>
+										Accès VIP
+									</div>
+									<div class="position-absolute bottom-2 end-2 bg-dark bg-opacity-75 px-2 py-1 rounded small">
+										1/2
+									</div>
+								</div>
+
+								<div class="card-body px-3 pt-3 pb-4">
+									<p class="small mb-1">Zermatt, Suisse</p>
+									<h3 class="h6 fw-semibold mb-2">
+										Chalet Alpin Suisse - Vue Montagne
+									</h3>
+
+									<div class="d-flex align-items-center mb-3">
+										<span class="bg-success px-2 py-1 rounded small me-2">9.0</span>
+										<span class="small">Fabuleux
+											<span class="small">(76 avis)</span>
+										</span>
+									</div>
+
+									<div class="mb-1">
+										<span class="fs-5 fw-semibold">410 €</span>
+										<span class="ms-2 text-decoration-line-through">500 €</span>
+									</div>
+									<p class="small mb-2">102 € par nuit</p>
+
+									<button type="button" class="btn btn-info btn-sm d-flex align-items-center px-3">
+										<span class="me-2 d-inline-flex align-items-center justify-content-center" style="width: 1rem; height: 1rem;">
+											<svg class="w-100 h-100" viewbox="0 0 16 16" fill="currentColor">
+												<path d="M8 0L10.5 5.5L16 8L10.5 10.5L8 16L5.5 10.5L0 8L5.5 5.5L8 0Z"></path>
+											</svg>
+										</span>
+										Prix membre disponible
+									</button>
+
+									<p class="text-white-50 small mb-0 mt-2">taxes et frais compris</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Tu peux continuer à ajouter les autres slides de la même façon -->
+
+					</div>
+
+					<button class="carousel-control-prev" type="button" data-bs-target="#bestDealsCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+						<span class="visually-hidden">Précédent</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#bestDealsCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon"></span>
+						<span class="visually-hidden">Suivant</span>
+					</button>
+				</div>
+
+				<!-- DESKTOP : LISTE HORIZONTALE -->
+				<div class="d-none d-md-block mt-2">
+					<div
+						class="d-flex gap-3 overflow-auto pb-3" style="scrollbar-width: none; -ms-overflow-style: none;">
+						<!-- Card 1 -->
+						<div class="card border-0 bg-transparent text-white flex-shrink-0 shadow rounded-4" style="width: 25%;">
+							<div class="position-relative overflow-hidden" style="height: 10rem;">
+								<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/8f/d1/6e/caption.jpg?w=900&h=500&s=1" class="w-100 h-100" style="object-fit: cover;" alt="Villa de Luxe avec Vue Mer - 5 Chambres 5 Salles de...">
+								<div class="position-absolute top-2 start-2 bg-danger px-2 py-1 rounded small d-flex align-items-center">
+									<svg class="me-1" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"></path>
+									</svg>
+									Accès VIP
+								</div>
+								<div class="position-absolute bottom-2 end-2 bg-dark bg-opacity-75 px-2 py-1 rounded small">
+									1/3
+								</div>
+							</div>
+
+							<div class="px-3 pt-3 pb-4">
+								<p class="small mb-2">Saint-Tropez, France</p>
+								<h3 class="h6 fw-semibold mb-3">
+									Villa de Luxe avec Vue Mer - 5 Chambres 5 Salles de...
+								</h3>
+
+								<div class="mb-3">
+									<div class="d-flex align-items-center gap-2">
+										<span class="bg-success px-2 py-1 rounded small">9.8</span>
+										<span class="small">Exceptionnel (127 avis)</span>
+									</div>
+								</div>
+
+								<div class="mb-3">
+									<div class="d-flex align-items-baseline gap-2 mb-1">
+										<span class="fs-4">545 €</span>
+										<span class="text-decoration-line-through">700 €</span>
+									</div>
+									<p class="small mb-0">109 € par nuit</p>
+								</div>
+
+								<div class="mb-2">
+									<span class="d-inline-flex align-items-center bg-primary px-3 py-1 rounded-3 small">
+										<span class="me-2 d-inline-flex align-items-center justify-content-center" style="width: 1rem; height: 1rem;">
+											<svg class="w-100 h-100" viewbox="0 0 16 16" fill="currentColor">
+												<path d="M8 0L10.5 5.5L16 8L10.5 10.5L8 16L5.5 10.5L0 8L5.5 5.5L8 0Z" fill="white"></path>
+											</svg>
+										</span>
+										Prix membre disponible
+									</span>
+								</div>
+
+								<p class="small mb-0">taxes et frais compris</p>
+							</div>
+						</div>
+
+						<!-- Card 2 (Bali) -->
+						<div class="card border-0 bg-transparent text-white flex-shrink-0 shadow rounded-4" style="width: 25%;">
+							<div class="position-relative overflow-hidden" style="height: 10rem;">
+								<img src="https://www.momondo.fr/rimg/himg/10/a9/67/expedia_group-164551-45734695-180382.jpg?width=968&height=607&crop=true" class="w-100 h-100" style="object-fit: cover;" alt="Resort Tropical Bali - Piscine et Spa">
+								<div class="position-absolute bottom-2 end-2 bg-dark bg-opacity-75 px-2 py-1 rounded small">
+									1/2
+								</div>
+							</div>
+
+							<div class="px-3 pt-3 pb-4">
+								<p class="small mb-2">Bali, Indonésie</p>
+								<h3 class="h6 fw-semibold mb-3">
+									Resort Tropical Bali - Piscine et Spa
+								</h3>
+
+								<div class="mb-3">
+									<div class="d-flex align-items-center gap-2">
+										<span class="bg-success px-2 py-1 rounded small">9.2</span>
+										<span class="small">Merveilleux (98 avis)</span>
+									</div>
+								</div>
+
+								<div class="mb-3">
+									<div class="d-flex align-items-baseline gap-2 mb-1">
+										<span class="fs-4">320 €</span>
+										<span class="text-decoration-line-through">400 €</span>
+									</div>
+									<p class="small mb-0">80 € par nuit</p>
+								</div>
+
+								<div class="mb-2">
+									<span class="d-inline-flex align-items-center bg-primary px-3 py-1 rounded-3 small">
+										<span class="me-2 d-inline-flex align-items-center justify-content-center" style="width: 1rem; height: 1rem;">
+											<svg class="w-100 h-100" viewbox="0 0 16 16" fill="currentColor">
+												<path d="M8 0L10.5 5.5L16 8L10.5 10.5L8 16L5.5 10.5L0 8L5.5 5.5L8 0Z" fill="white"></path>
+											</svg>
+										</span>
+										Prix membre disponible
+									</span>
+								</div>
+
+								<p class="small mb-0">taxes et frais compris</p>
+							</div>
+						</div>
+
+						<!-- Tu continues les autres cartes (chalet, appart, palazzo, loft, houseboat) sur le même modèle -->
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="pt-5 pb-3">
+			<div
+				class="container">
+
+				<!-- Titre -->
+				<div class="mb-4 text-start">
+					<h2 class="h5 fw-semibold mb-1">Les coups de cœur de nos voyageurs</h2>
+					<p class="text-muted small mb-0">
+						Explorer pour
+						<span class="fw-bold">3 déc. - 5 déc.</span>
+					</p>
+				</div>
+
+				<!-- MOBILE : CAROUSEL -->
+				<div id="favoritesCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+					<div
+						class="carousel-inner pb-3">
+
+						<!-- Slide 1 -->
+						<div class="carousel-item active">
+							<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+								<div class="position-relative overflow-hidden" style="height: 12rem;">
+									<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/465741858.jpg?k=7f358785f7ceed7f03d50bb933a3d029abdf46a7627be142507824fca36bcd24&o=&hp=1" class="w-100 h-100" style="object-fit: cover;" alt="Riad Authentique au Cœur de la Médina">
+									<button type="button" class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										‹
+									</button>
+									<button type="button" class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										›
+									</button>
+									<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+										1/3
+									</div>
+								</div>
+
+								<div class="card-body p-3">
+									<div class="mb-3 d-flex align-items-center gap-2">
+										<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+											9.4
+										</span>
+										<span class="small text-dark">
+											Exceptionnel
+											<span class="text-muted">(156 avis)</span>
+										</span>
+									</div>
+
+									<h3 class="h6 fw-semibold text-dark mb-1">
+										Riad Authentique au Cœur de la Médina
+									</h3>
+									<p class="small text-muted mb-3">Marrakech, Maroc</p>
+
+									<div class="mb-1">
+										<div class="d-flex flex-column">
+											<span class="fs-5 fw-medium text-dark">€180</span>
+											<span class="small text-muted">€360 pour 2 nuits</span>
+										</div>
+									</div>
+									<p class="text-muted small mb-0">Frais inclus</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 2 -->
+						<div class="carousel-item">
+							<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+								<div class="position-relative overflow-hidden" style="height: 12rem;">
+									<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/443643650.jpg?k=15632e70f3125b3e4a92139f7c56f40cd2c51001ce02367d64e9d1eb70b65e0a&o=&hp=1" class="w-100 h-100" style="object-fit: cover;" alt="Pousada Historique avec Vue sur l'Océan">
+									<button type="button" class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										‹
+									</button>
+									<button type="button" class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										›
+									</button>
+									<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+										1/3
+									</div>
+								</div>
+
+								<div class="card-body p-3">
+									<div class="mb-3 d-flex align-items-center gap-2">
+										<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+											9.1
+										</span>
+										<span class="small text-dark">
+											Merveilleux
+											<span class="text-muted">(89 avis)</span>
+										</span>
+									</div>
+
+									<h3 class="h6 fw-semibold text-dark mb-1">
+										Pousada Historique avec Vue sur l'Océan
+									</h3>
+									<p class="small text-muted mb-3">Paraty, Brésil</p>
+
+									<div class="mb-1">
+										<div class="d-flex flex-column">
+											<span class="fs-5 fw-medium text-dark">€220</span>
+											<span class="small text-muted">€440 pour 2 nuits</span>
+										</div>
+									</div>
+									<p class="text-muted small mb-0">Frais inclus</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 3 -->
+						<div class="carousel-item">
+							<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+								<div class="position-relative overflow-hidden" style="height: 12rem;">
+									<img src="https://a0.muscache.com/im/pictures/miso/Hosting-5555608/original/313401ab-fbcd-4065-9ce4-02054d03761f.png" class="w-100 h-100" style="object-fit: cover;" alt="Houseboat Unique dans l'Archipel Suédois">
+									<button type="button" class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										‹
+									</button>
+									<button type="button" class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										›
+									</button>
+									<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+										1/3
+									</div>
+								</div>
+
+								<div class="card-body p-3">
+									<div class="mb-3 d-flex align-items-center gap-2">
+										<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+											9.1
+										</span>
+										<span class="small text-dark">
+											Merveilleux
+											<span class="text-muted">(89 avis)</span>
+										</span>
+									</div>
+
+									<h3 class="h6 fw-semibold text-dark mb-1">
+										Houseboat Unique dans l'Archipel Suédois
+									</h3>
+									<p class="small text-muted mb-3">Stockholm, Suède</p>
+
+									<div class="mb-1">
+										<div class="d-flex flex-column">
+											<span class="fs-5 fw-medium text-dark">€220</span>
+											<span class="small text-muted">€440 pour 2 nuits</span>
+										</div>
+									</div>
+									<p class="text-muted small mb-0">Frais inclus</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 4 -->
+						<div class="carousel-item">
+							<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+								<div class="position-relative overflow-hidden" style="height: 12rem;">
+									<img src="https://media.vrbo.com/lodging/30000000/29500000/29492200/29492176/a4ffdc73.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" class="w-100 h-100" style="object-fit: cover;" alt="Maison Rurale Toscane avec Piscine">
+									<button type="button" class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										‹
+									</button>
+									<button type="button" class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										›
+									</button>
+									<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+										1/3
+									</div>
+								</div>
+
+								<div class="card-body p-3">
+									<div class="mb-3 d-flex align-items-center gap-2">
+										<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+											9.6
+										</span>
+										<span class="small text-dark">
+											Exceptionnel
+											<span class="text-muted">(78 avis)</span>
+										</span>
+									</div>
+
+									<h3 class="h6 fw-semibold text-dark mb-1">
+										Maison Rurale Toscane avec Piscine
+									</h3>
+									<p class="small text-muted mb-3">Toscane, Italie</p>
+
+									<div class="mb-1">
+										<div class="d-flex flex-column">
+											<span class="fs-5 fw-medium text-dark">€350</span>
+											<span class="small text-muted">€700 pour 2 nuits</span>
+										</div>
+									</div>
+									<p class="text-muted small mb-0">Frais inclus</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 5 -->
+						<div class="carousel-item">
+							<div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+								<div class="position-relative overflow-hidden" style="height: 12rem;">
+									<img src="https://www.tropicalement-votre.com/produits/1122/fiche1.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Resort de Vacances avec Bungalow sur Pilotis">
+									<button type="button" class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										‹
+									</button>
+									<button type="button" class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+										›
+									</button>
+									<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+										1/3
+									</div>
+								</div>
+
+								<div class="card-body p-3">
+									<div class="mb-3 d-flex align-items-center gap-2">
+										<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+											9.7
+										</span>
+										<span class="small text-dark">
+											Exceptionnel
+											<span class="text-muted">(203 avis)</span>
+										</span>
+									</div>
+
+									<h3 class="h6 fw-semibold text-dark mb-1">
+										Resort de Vacances avec Bungalow sur Pilotis
+									</h3>
+									<p class="small text-muted mb-3">Maldives</p>
+
+									<div class="mb-1">
+										<div class="d-flex flex-column">
+											<span class="fs-5 fw-medium text-dark">€480</span>
+											<span class="small text-muted">€960 pour 2 nuits</span>
+										</div>
+									</div>
+									<p class="text-muted small mb-0">Frais inclus</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<button class="carousel-control-prev" type="button" data-bs-target="#favoritesCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+						<span class="visually-hidden">Précédent</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#favoritesCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon"></span>
+						<span class="visually-hidden">Suivant</span>
+					</button>
+				</div>
+
+				<!-- DESKTOP : LISTE HORIZONTALE -->
+				<div class="d-none d-md-block mt-2">
+					<div
+						class="d-flex gap-4 overflow-auto pb-3" style="scrollbar-width:none; -ms-overflow-style:none;">
+
+						<!-- Carte 1 -->
+						<div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+							<div class="position-relative overflow-hidden" style="height: 12rem;">
+								<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/465741858.jpg?k=7f358785f7ceed7f03d50bb933a3d029abdf46a7627be142507824fca36bcd24&o=&hp=1" class="w-100 h-100" style="object-fit: cover;" alt="Riad Authentique au Cœur de la Médina">
+								<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+									1/3
+								</div>
+							</div>
+							<div class="card-body p-3">
+								<div class="mb-3 d-flex align-items-center gap-2">
+									<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+										9.4
+									</span>
+									<span class="small text-dark">
+										Exceptionnel
+										<span class="text-muted">(156 avis)</span>
+									</span>
+								</div>
+								<h3 class="h6 fw-semibold text-dark mb-1">Riad Authentique au Cœur de la Médina</h3>
+								<p class="small text-muted mb-3">Marrakech, Maroc</p>
+								<div class="mb-1">
+									<div class="d-flex flex-column">
+										<span class="fs-5 fw-medium text-dark">€180</span>
+										<span class="small text-muted">€360 pour 2 nuits</span>
+									</div>
+								</div>
+								<p class="text-muted small mb-0">Frais inclus</p>
+							</div>
+						</div>
+
+						<!-- Carte 2 -->
+						<div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+							<div class="position-relative overflow-hidden" style="height: 12rem;">
+								<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/443643650.jpg?k=15632e70f3125b3e4a92139f7c56f40cd2c51001ce02367d64e9d1eb70b65e0a&o=&hp=1" class="w-100 h-100" style="object-fit: cover;" alt="Pousada Historique avec Vue sur l'Océan">
+								<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+									1/3
+								</div>
+							</div>
+							<div class="card-body p-3">
+								<div class="mb-3 d-flex align-items-center gap-2">
+									<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+										9.1
+									</span>
+									<span class="small text-dark">
+										Merveilleux
+										<span class="text-muted">(89 avis)</span>
+									</span>
+								</div>
+								<h3 class="h6 fw-semibold text-dark mb-1">Pousada Historique avec Vue sur l'Océan</h3>
+								<p class="small text-muted mb-3">Paraty, Brésil</p>
+								<div class="mb-1">
+									<div class="d-flex flex-column">
+										<span class="fs-5 fw-medium text-dark">€220</span>
+										<span class="small text-muted">€440 pour 2 nuits</span>
+									</div>
+								</div>
+								<p class="text-muted small mb-0">Frais inclus</p>
+							</div>
+						</div>
+
+						<!-- Carte 3 -->
+						<div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+							<div class="position-relative overflow-hidden" style="height: 12rem;">
+								<img src="https://a0.muscache.com/im/pictures/miso/Hosting-5555608/original/313401ab-fbcd-4065-9ce4-02054d03761f.png" class="w-100 h-100" style="object-fit: cover;" alt="Houseboat Unique dans l'Archipel Suédois">
+								<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+									1/3
+								</div>
+							</div>
+							<div class="card-body p-3">
+								<div class="mb-3 d-flex align-items-center gap-2">
+									<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+										9.1
+									</span>
+									<span class="small text-dark">
+										Merveilleux
+										<span class="text-muted">(89 avis)</span>
+									</span>
+								</div>
+								<h3 class="h6 fw-semibold text-dark mb-1">Houseboat Unique dans l'Archipel Suédois</h3>
+								<p class="small text-muted mb-3">Stockholm, Suède</p>
+								<div class="mb-1">
+									<div class="d-flex flex-column">
+										<span class="fs-5 fw-medium text-dark">€220</span>
+										<span class="small text-muted">€440 pour 2 nuits</span>
+									</div>
+								</div>
+								<p class="text-muted small mb-0">Frais inclus</p>
+							</div>
+						</div>
+
+						<!-- Carte 4 -->
+						<div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+							<div class="position-relative overflow-hidden" style="height: 12rem;">
+								<img src="https://media.vrbo.com/lodging/30000000/29500000/29492200/29492176/a4ffdc73.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" class="w-100 h-100" style="object-fit: cover;" alt="Maison Rurale Toscane avec Piscine">
+								<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+									1/3
+								</div>
+							</div>
+							<div class="card-body p-3">
+								<div class="mb-3 d-flex align-items-center gap-2">
+									<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+										9.6
+									</span>
+									<span class="small text-dark">
+										Exceptionnel
+										<span class="text-muted">(78 avis)</span>
+									</span>
+								</div>
+								<h3 class="h6 fw-semibold text-dark mb-1">Maison Rurale Toscane avec Piscine</h3>
+								<p class="small text-muted mb-3">Toscane, Italie</p>
+								<div class="mb-1">
+									<div class="d-flex flex-column">
+										<span class="fs-5 fw-medium text-dark">€350</span>
+										<span class="small text-muted">€700 pour 2 nuits</span>
+									</div>
+								</div>
+								<p class="text-muted small mb-0">Frais inclus</p>
+							</div>
+						</div>
+
+						<!-- Carte 5 -->
+						<div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+							<div class="position-relative overflow-hidden" style="height: 12rem;">
+								<img src="https://www.tropicalement-votre.com/produits/1122/fiche1.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Resort de Vacances avec Bungalow sur Pilotis">
+								<div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+									1/3
+								</div>
+							</div>
+							<div class="card-body p-3">
+								<div class="mb-3 d-flex align-items-center gap-2">
+									<span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+										9.7
+									</span>
+									<span class="small text-dark">
+										Exceptionnel
+										<span class="text-muted">(203 avis)</span>
+									</span>
+								</div>
+								<h3 class="h6 fw-semibold text-dark mb-1">Resort de Vacances avec Bungalow sur Pilotis</h3>
+								<p class="small text-muted mb-3">Maldives</p>
+								<div class="mb-1">
+									<div class="d-flex flex-column">
+										<span class="fs-5 fw-medium text-dark">€480</span>
+										<span class="small text-muted">€960 pour 2 nuits</span>
+									</div>
+								</div>
+								<p class="text-muted small mb-0">Frais inclus</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</section>
+<section class="py-5 mb-4">
+  <div class="container">
+
+    <!-- Titre -->
+    <div class="mb-4 text-start">
+      <h2 class="h5 fw-semibold mb-2">Où partir ? Découvrez nos destinations les plus prisées</h2>
+      <p class="text-muted small mb-0">
+        Explorer pour <span class="fw-bold">18 déc. - 20 déc.</span>
+      </p>
+    </div>
+
+    <!-- MOBILE : CAROUSEL -->
+    <div id="topDestinationsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+      <div class="carousel-inner pb-3">
+
+        <!-- Slide 1 : Cottage Breton -->
+        <div class="carousel-item active">
+          <div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+            <div class="position-relative overflow-hidden" style="height: 12rem;">
+              <img
+                src="https://media-cdn.tripadvisor.com/media/photo-s/2c/8e/30/64/caption.jpg"
+                class="w-100 h-100"
+                style="object-fit: cover;"
+                alt="Cottage Breton avec Vue sur l'Océan"
+              >
+              <button type="button"
+                      class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ‹
+              </button>
+              <button type="button"
+                      class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ›
+              </button>
+              <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+                1/3
+              </div>
+            </div>
+
+            <div class="card-body p-3">
+              <div class="mb-3 d-flex align-items-center gap-2">
+                <span class="px-2 py-1 rounded small"
+                      style="background:#dbfce7; color:#026630;">
+                  9.3
+                </span>
+                <span class="small text-dark">
+                  Exceptionnel <span class="text-muted">(87 avis)</span>
+                </span>
+              </div>
+
+              <h3 class="h6 fw-semibold text-dark mb-1">
+                Cottage Breton avec Vue sur l'Océan
+              </h3>
+              <p class="small text-muted mb-3">Saint-Malo, Bretagne</p>
+
+              <div class="mb-1">
+                <div class="d-flex flex-column">
+                  <span class="fs-5 fw-medium text-dark">€420</span>
+                  <span class="small text-muted">€2940 pour 7 nuits</span>
+                </div>
+              </div>
+              <p class="text-muted small mb-0">Frais inclus</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 : Villa Méditerranéenne -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+            <div class="position-relative overflow-hidden" style="height: 12rem;">
+              <img
+                src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/529660934.jpg?k=d3d0bf2e038c322461caac15f356162533c9ee6eba3b2530aab961ac7d136d78&o=&hp=1"
+                class="w-100 h-100"
+                style="object-fit: cover;"
+                alt="Villa Méditerranéenne avec Piscine Privée - 3 Chambres"
+              >
+              <button type="button"
+                      class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ‹
+              </button>
+              <button type="button"
+                      class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ›
+              </button>
+              <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+                1/3
+              </div>
+            </div>
+
+            <div class="card-body p-3">
+              <div class="mb-3 d-flex align-items-center gap-2">
+                <span class="px-2 py-1 rounded small"
+                      style="background:#dbfce7; color:#026630;">
+                  9.9
+                </span>
+                <span class="small text-dark">
+                  Exceptionnel <span class="text-muted">(234 avis)</span>
+                </span>
+              </div>
+
+              <h3 class="h6 fw-semibold text-dark mb-1">
+                Villa Méditerranéenne avec Piscine Privée - 3 Chambres
+              </h3>
+              <p class="small text-muted mb-3">Nice, Côte d'Azur</p>
+
+              <div class="mb-1">
+                <div class="d-flex flex-column">
+                  <span class="fs-5 fw-medium text-dark">€890</span>
+                  <span class="small text-muted">€6230 pour 7 nuits</span>
+                </div>
+              </div>
+              <p class="text-muted small mb-0">Frais inclus</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 : Appartement Tour Eiffel -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+            <div class="position-relative overflow-hidden" style="height: 12rem;">
+              <img
+                src="https://sexyhotelsparis.com/wp-content/uploads/2015/04/suite-romantique-vue-eiffel-paris-sexyhotelsparis.jpg"
+                class="w-100 h-100"
+                style="object-fit: cover;"
+                alt="Appartement de Luxe avec Vue Tour Eiffel"
+              >
+              <button type="button"
+                      class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ‹
+              </button>
+              <button type="button"
+                      class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ›
+              </button>
+              <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+                1/3
+              </div>
+            </div>
+
+            <div class="card-body p-3">
+              <div class="mb-3 d-flex align-items-center gap-2">
+                <span class="px-2 py-1 rounded small"
+                      style="background:#dbfce7; color:#026630;">
+                  9.7
+                </span>
+                <span class="small text-dark">
+                  Exceptionnel <span class="text-muted">(189 avis)</span>
+                </span>
+              </div>
+
+              <h3 class="h6 fw-semibold text-dark mb-1">
+                Appartement de Luxe avec Vue Tour Eiffel
+              </h3>
+              <p class="small text-muted mb-3">Paris, Île-de-France</p>
+
+              <div class="mb-1">
+                <div class="d-flex flex-column">
+                  <span class="fs-5 fw-medium text-dark">€650</span>
+                  <span class="small text-muted">€4550 pour 7 nuits</span>
+                </div>
+              </div>
+              <p class="text-muted small mb-0">Frais inclus</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 : Chalet Alpin Autrichien -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+            <div class="position-relative overflow-hidden" style="height: 12rem;">
+              <img
+                src="https://weeks-off.lon1.digitaloceanspaces.com/prod/3236/Chalet-Mimi-Austria-facade-summer.jpg"
+                class="w-100 h-100"
+                style="object-fit: cover;"
+                alt="Chalet Alpin Autrichien - Vue Panoramique"
+              >
+              <button type="button"
+                      class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ‹
+              </button>
+              <button type="button"
+                      class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ›
+              </button>
+              <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+                1/3
+              </div>
+            </div>
+
+            <div class="card-body p-3">
+              <div class="mb-3 d-flex align-items-center gap-2">
+                <span class="px-2 py-1 rounded small"
+                      style="background:#dbfce7; color:#026630;">
+                  9.4
+                </span>
+                <span class="small text-dark">
+                  Exceptionnel <span class="text-muted">(142 avis)</span>
+                </span>
+              </div>
+
+              <h3 class="h6 fw-semibold text-dark mb-1">
+                Chalet Alpin Autrichien - Vue Panoramique
+              </h3>
+              <p class="small text-muted mb-3">Innsbruck, Autriche</p>
+
+              <div class="mb-1">
+                <div class="d-flex flex-column">
+                  <span class="fs-5 fw-medium text-dark">€680</span>
+                  <span class="small text-muted">€4760 pour 7 nuits</span>
+                </div>
+              </div>
+              <p class="text-muted small mb-0">Frais inclus</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5 : Villa Provençale -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-lg rounded-4 mx-auto" style="width: 15rem;">
+            <div class="position-relative overflow-hidden" style="height: 12rem;">
+              <img
+                src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/550985717.jpg?k=a7e4db47998322547d949a330136f2d1c3145267f5f5c1235f05817e8e27591e&o=&hp=1"
+                class="w-100 h-100"
+                style="object-fit: cover;"
+                alt="Villa Provençale avec Piscine Privée"
+              >
+              <button type="button"
+                      class="position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ‹
+              </button>
+              <button type="button"
+                      class="position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-dark rounded-circle opacity-75">
+                ›
+              </button>
+              <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+                1/3
+              </div>
+            </div>
+
+            <div class="card-body p-3">
+              <div class="mb-3 d-flex align-items-center gap-2">
+                <span class="px-2 py-1 rounded small"
+                      style="background:#dbfce7; color:#026630;">
+                  9.6
+                </span>
+                <span class="small text-dark">
+                  Exceptionnel <span class="text-muted">(178 avis)</span>
+                </span>
+              </div>
+
+              <h3 class="h6 fw-semibold text-dark mb-1">
+                Villa Provençale avec Piscine Privée
+              </h3>
+              <p class="small text-muted mb-3">Aix-en-Provence, France</p>
+
+              <div class="mb-1">
+                <div class="d-flex flex-column">
+                  <span class="fs-5 fw-medium text-dark">€520</span>
+                  <span class="small text-muted">€3640 pour 7 nuits</span>
+                </div>
+              </div>
+              <p class="text-muted small mb-0">Frais inclus</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#topDestinationsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#topDestinationsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
+    </div>
+
+    <!-- DESKTOP : LISTE HORIZONTALE -->
+    <div class="d-none d-md-block mt-2">
+      <div class="d-flex gap-4 overflow-auto pb-3 px-3" style="scrollbar-width:none; -ms-overflow-style:none;">
+
+        <!-- Carte 1 : Cottage Breton -->
+        <div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+          <div class="position-relative overflow-hidden" style="height: 12rem;">
+            <img
+              src="https://media-cdn.tripadvisor.com/media/photo-s/2c/8e/30/64/caption.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover;"
+              alt="Cottage Breton avec Vue sur l'Océan"
+            >
+            <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+              1/3
+            </div>
+          </div>
+          <div class="card-body p-3">
+            <div class="mb-3 d-flex align-items-center gap-2">
+              <span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+                9.3
+              </span>
+              <span class="small text-dark">
+                Exceptionnel <span class="text-muted">(87 avis)</span>
+              </span>
+            </div>
+            <h3 class="h6 fw-semibold text-dark mb-1">Cottage Breton avec Vue sur l'Océan</h3>
+            <p class="small text-muted mb-3">Saint-Malo, Bretagne</p>
+            <div class="mb-1">
+              <div class="d-flex flex-column">
+                <span class="fs-5 fw-medium text-dark">€420</span>
+                <span class="small text-muted">€2940 pour 7 nuits</span>
+              </div>
+            </div>
+            <p class="text-muted small mb-0">Frais inclus</p>
+          </div>
+        </div>
+
+        <!-- Carte 2 : Villa Méditerranéenne -->
+        <div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+          <div class="position-relative overflow-hidden" style="height: 12rem;">
+            <img
+              src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/529660934.jpg?k=d3d0bf2e038c322461caac15f356162533c9ee6eba3b2530aab961ac7d136d78&o=&hp=1"
+              class="w-100 h-100"
+              style="object-fit: cover;"
+              alt="Villa Méditerranéenne avec Piscine Privée - 3 Chambres"
+            >
+            <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+              1/3
+            </div>
+          </div>
+          <div class="card-body p-3">
+            <div class="mb-3 d-flex align-items-center gap-2">
+              <span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+                9.9
+              </span>
+              <span class="small text-dark">
+                Exceptionnel <span class="text-muted">(234 avis)</span>
+              </span>
+            </div>
+            <h3 class="h6 fw-semibold text-dark mb-1">Villa Méditerranéenne avec Piscine Privée - 3 Chambres</h3>
+            <p class="small text-muted mb-3">Nice, Côte d'Azur</p>
+            <div class="mb-1">
+              <div class="d-flex flex-column">
+                <span class="fs-5 fw-medium text-dark">€890</span>
+                <span class="small text-muted">€6230 pour 7 nuits</span>
+              </div>
+            </div>
+            <p class="text-muted small mb-0">Frais inclus</p>
+          </div>
+        </div>
+
+        <!-- Carte 3 : Appartement Tour Eiffel -->
+        <div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+          <div class="position-relative overflow-hidden" style="height: 12rem;">
+            <img
+              src="https://sexyhotelsparis.com/wp-content/uploads/2015/04/suite-romantique-vue-eiffel-paris-sexyhotelsparis.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover;"
+              alt="Appartement de Luxe avec Vue Tour Eiffel"
+            >
+            <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+              1/3
+            </div>
+          </div>
+          <div class="card-body p-3">
+            <div class="mb-3 d-flex align-items-center gap-2">
+              <span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+                9.7
+              </span>
+              <span class="small text-dark">
+                Exceptionnel <span class="text-muted">(189 avis)</span>
+              </span>
+            </div>
+            <h3 class="h6 fw-semibold text-dark mb-1">Appartement de Luxe avec Vue Tour Eiffel</h3>
+            <p class="small text-muted mb-3">Paris, Île-de-France</p>
+            <div class="mb-1">
+              <div class="d-flex flex-column">
+                <span class="fs-5 fw-medium text-dark">€650</span>
+                <span class="small text-muted">€4550 pour 7 nuits</span>
+              </div>
+            </div>
+            <p class="text-muted small mb-0">Frais inclus</p>
+          </div>
+        </div>
+
+        <!-- Carte 4 : Chalet Autrichien -->
+        <div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+          <div class="position-relative overflow-hidden" style="height: 12rem;">
+            <img
+              src="https://weeks-off.lon1.digitaloceanspaces.com/prod/3236/Chalet-Mimi-Austria-facade-summer.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover;"
+              alt="Chalet Alpin Autrichien - Vue Panoramique"
+            >
+            <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+              1/3
+            </div>
+          </div>
+          <div class="card-body p-3">
+            <div class="mb-3 d-flex align-items-center gap-2">
+              <span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+                9.4
+              </span>
+              <span class="small text-dark">
+                Exceptionnel <span class="text-muted">(142 avis)</span>
+              </span>
+            </div>
+            <h3 class="h6 fw-semibold text-dark mb-1">Chalet Alpin Autrichien - Vue Panoramique</h3>
+            <p class="small text-muted mb-3">Innsbruck, Autriche</p>
+            <div class="mb-1">
+              <div class="d-flex flex-column">
+                <span class="fs-5 fw-medium text-dark">€680</span>
+                <span class="small text-muted">€4760 pour 7 nuits</span>
+              </div>
+            </div>
+            <p class="text-muted small mb-0">Frais inclus</p>
+          </div>
+        </div>
+
+        <!-- Carte 5 : Villa Provençale -->
+        <div class="card border-0 rounded-4 shadow-lg flex-shrink-0" style="width: 280px;">
+          <div class="position-relative overflow-hidden" style="height: 12rem;">
+            <img
+              src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/550985717.jpg?k=a7e4db47998322547d949a330136f2d1c3145267f5f5c1235f05817e8e27591e&o=&hp=1"
+              class="w-100 h-100"
+              style="object-fit: cover;"
+              alt="Villa Provençale avec Piscine Privée"
+            >
+            <div class="position-absolute bottom-1 end-1 bg-dark bg-opacity-75 text-white px-2 py-1 rounded small">
+              1/3
+            </div>
+          </div>
+          <div class="card-body p-3">
+            <div class="mb-3 d-flex align-items-center gap-2">
+              <span class="px-2 py-1 rounded small" style="background:#dbfce7; color:#026630;">
+                9.6
+              </span>
+              <span class="small text-dark">
+                Exceptionnel <span class="text-muted">(178 avis)</span>
+              </span>
+            </div>
+            <h3 class="h6 fw-semibold text-dark mb-1">Villa Provençale avec Piscine Privée</h3>
+            <p class="small text-muted mb-3">Aix-en-Provence, France</p>
+            <div class="mb-1">
+              <div class="d-flex flex-column">
+                <span class="fs-5 fw-medium text-dark">€520</span>
+                <span class="small text-muted">€3640 pour 7 nuits</span>
+              </div>
+            </div>
+            <p class="text-muted small mb-0">Frais inclus</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+	</main>
+
+
+<footer class="bg-white pb-4 border-top">
+  <div class="container py-4 py-md-5">
+
+    <!-- Logo -->
+    <div class="mb-4 mb-md-5">
+      <div class="fs-2 fw-bold">
+        <span class="text-primary">wanderlate</span><span class="text-danger">.com</span>
+      </div>
+    </div>
+
+    <!-- Liens colonnes -->
+    <div class="row g-4 mb-4 mb-md-5">
+
+      <!-- Entreprise -->
+      <div class="col-12 col-md-4">
+        <h3 class="text-uppercase small fw-semibold text-dark mb-3">Entreprise</h3>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">À propos</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Carrières</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Affiliés</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Salle de presse</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Légal -->
+      <div class="col-12 col-md-4">
+        <h3 class="text-uppercase small fw-semibold text-dark mb-3">Légal et confidentialité</h3>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-1">
+            <a href="/fr/legal" class="small text-muted text-decoration-none link-hover">Mentions légales</a>
+          </li>
+          <li class="mb-1">
+            <a href="/fr/terms" class="small text-muted text-decoration-none link-hover">Conditions générales</a>
+          </li>
+          <li class="mb-1">
+            <a href="/fr/cgv" class="small text-muted text-decoration-none link-hover">Conditions de vente</a>
+          </li>
+          <li class="mb-1">
+            <a href="/fr/privacy" class="small text-muted text-decoration-none link-hover">Politique de confidentialité</a>
+          </li>
+          <li class="mb-1">
+            <a href="/fr/cookies" class="small text-muted text-decoration-none link-hover">Déclaration sur les cookies</a>
+          </li>
+          <li class="mb-1">
+            <a href="/fr/charter" class="small text-muted text-decoration-none link-hover">Charte anti-discrimination</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Explorer -->
+      <div class="col-12 col-md-4">
+        <h3 class="text-uppercase small fw-semibold text-dark mb-3">Explorer Wanderlate.com</h3>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Publiez votre annonce</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Réserver en toute confiance</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Confiance et sécurité</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Ressources partenaires</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Guides de location de vacances</a>
+          </li>
+          <li class="mb-1">
+            <a href="#" class="small text-muted text-decoration-none link-hover">Cartes de crédit voyage</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bas de page -->
+    <div class="pt-3 border-top">
+      <p class="small text-muted text-center mb-0">
+        ©️ 2025 Wanderlate, LTD – Tous droits réservés.<br>
+        Wanderlate et son logo sont des marques déposées.<br>
+        Wanderlate, LTD n'est pas responsable du contenu des sites externes.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* petit effet hover discret */
+  .link-hover:hover {
+    color: #212529 !important;
+  }
+</style>
+
+{% endblock %}
+{% block javascript %} <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js"></script>
+	 <script>
+		document.addEventListener("DOMContentLoaded", function () {
+		    const currentLocaleCode = document.documentElement.lang || 'en';
+		    const normalized = currentLocaleCode.toLowerCase().substring(0, 2);
+		
+		    const localeMap = {
+		        fr: flatpickr.l10ns.fr,
+		        en: flatpickr.l10ns.en || flatpickr.l10ns.default,
+		    };
+		
+		    flatpickr("#daterange", {
+		        mode: "range",
+		        dateFormat: normalized === 'fr' ? "d/m/Y" : "m/d/Y",
+		        locale: localeMap[normalized] || flatpickr.l10ns.default,
+		        minDate: "today",
+		        showMonths: 2 // 👉 2 mois visibles
+		    });
+		});
+		
+	    											// Valeurs initiales
+												let travelersState = {
+												  adults: 2,
+												  children: 0,
+												  rooms: 1
+												};
+												
+												const input = document.getElementById('travelersInput');
+												const dropdown = document.getElementById('travelersDropdown');
+												
+												function updateInputValue() {
+												  const totalPeople = travelersState.adults + travelersState.children;
+												  const peopleLabel = totalPeople > 1 ? 'personnes' : 'personne';
+												  const roomLabel = travelersState.rooms > 1 ? 'chambres' : 'chambre';
+												  input.value = `${totalPeople} ${peopleLabel}, ${travelersState.rooms} ${roomLabel}`;
+												}
+												
+												function updateCounters() {
+												  document.getElementById('count-adults').textContent = travelersState.adults;
+												  document.getElementById('count-children').textContent = travelersState.children;
+												  document.getElementById('count-rooms').textContent = travelersState.rooms;
+												  updateInputValue();
+												}
+												
+												// Afficher / cacher le dropdown au clic sur l'input
+												input.addEventListener('click', function (e) {
+												  e.stopPropagation();
+												  dropdown.classList.toggle('d-none');
+												});
+												
+												// Fermer si on clique en dehors
+												document.addEventListener('click', function (e) {
+												  if (!dropdown.classList.contains('d-none')) {
+												    if (!dropdown.contains(e.target) && e.target !== input) {
+												      dropdown.classList.add('d-none');
+												    }
+												  }
+												});
+												
+												// Gestion des boutons +/-
+												document.querySelectorAll('.btn-counter').forEach(btn => {
+												  btn.addEventListener('click', function () {
+												    const target = this.getAttribute('data-target');
+												    const action = this.getAttribute('data-action');
+												
+												    if (action === 'plus') {
+												      travelersState[target]++;
+												    } else {
+												      // Limites minimales
+												      if (target === 'adults' && travelersState[target] > 1) {
+												        travelersState[target]--;
+												      } else if (target === 'children' && travelersState[target] > 0) {
+												        travelersState[target]--;
+												      } else if (target === 'rooms' && travelersState[target] > 1) {
+												        travelersState[target]--;
+												      }
+												    }
+												
+												    updateCounters();
+												  });
+												});
+												
+												// Mise à jour initiale
+												updateCounters();
+		</script>
 {% endblock %}
