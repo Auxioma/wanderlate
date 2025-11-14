@@ -158,8 +158,6 @@
 										</div>
 									</div>
 								</div>
-
-
 								<!-- Bouton -->
 								<div class="col-md-3 d-flex align-items-end">
 									<button class="btn w-100 py-2 btn-primary d-flex justify-content-center align-items-center">
@@ -194,118 +192,113 @@
 					</button>
 				</div>
 
-				<div class="tab-pane fade p-5 text-center" id="activites" role="tabpanel">
-					<button class="btn btn-outline-primary d-inline-flex align-items-center gap-2" disabled>
-						<i class="bi bi-activity"></i>
-						À venir prochainement
-					</button>
+				<div class="tab-pane fade p-5 text-center" id="activites" role="tabpanel">	
 				</div>
 				</div>
 			</div>
 		</section>
 
 		
-
-		<section class="text-white p-md-5 mb-4">
-			<div class="container bg-primary p-4 rounded">
-				<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
+		{# Banner #}
+		<section class="my-4 px-4">
+			<div class="container">
+				<div class="bg-primary d-flex flex-column flex-md-row align-items-md-center justify-content-md-between p-4 gap-3">
 
 						<div class="d-flex align-items-center text-center text-md-start">
 							<img src="https://a.travel-assets.com/egds/marks/onekey__standard__always_light.svg" alt="OneKey" class="me-3" width="48" height="48">
 
 							<div>
-								<p class="small fw-semibold mb-1">
+								<p class="texte__small mb-1">
 									Économisez 10% minimum sur plus de 100 000 hôtels dans le monde grâce aux Prix membres.
 								</p>
-								<p class="small fw-semibold d-none d-md-block mb-0">
+								<p class="texte__small d-none d-md-block mb-0">
 									Créez un compte gratuit pour accéder à ces prix exclusifs et bien plus encore.
 								</p>
 							</div>
 						</div>
 
-						<button type="button" class="btn btn-danger fw-semibold px-4 py-2 w-100 w-md-auto">
+						<button type="button" class="btn btn-danger btn-login">
 							Se connecter
 						</button>
-
 				</div>	
 			</div>
+			
 		</section>
 
-			<section
-				class="mb-4 mb-md-5">
-
+			{# A faire #}
+			<section class="my-4 px-4">
+				<div class="container">
 				<!-- Mobile : carousel -->
-				<div id="advantagesCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
-					<div
-						class="carousel-inner pb-3">
-
-						<!-- Slide 1 -->
-						<div class="carousel-item active">
-							<div class="mx-auto" style="max-width: 320px; height: 160px;">
-								<div class="h-100 rounded overflow-hidden position-relative">
-									<div class="row g-0 h-100">
-										<div class="col-7 bg-primary text-white p-3 d-flex">
-											<h3 class="fs-6 fw-semibold mb-0">
-												Obtenez des alertes si le prix des vols baisse
-											</h3>
-										</div>
-										<div class="col-5 position-relative">
-											<img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Obtenez des alertes si le prix des vols baisse" class="w-100 h-100" style="object-fit: cover;">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Slide 2 -->
-						<div class="carousel-item">
-							<div class="mx-auto" style="max-width: 320px; height: 160px;">
-								<div class="h-100 rounded overflow-hidden position-relative">
-									<div class="row g-0 h-100">
-										<div class="col-7 bg-primary text-white p-3 d-flex">
-											<h3 class="fs-6 fw-semibold mb-0">
-												Vous pouvez faire des économies en combinant vol et hôtel
-											</h3>
-										</div>
-										<div class="col-5 position-relative">
-											<img src="https://images.pexels.com/photos/3769121/pexels-photo-3769121.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vous pouvez faire des économies en combinant vol et hôtel" class="w-100 h-100" style="object-fit: cover;">
+					<div id="advantagesCarousel" class="carousel slide d-md-none p-4" data-bs-ride="carousel">
+						<div class="carousel-inner pb-3">
+							
+							<!-- Slide 1 -->
+							<div class="carousel-item active">
+								<div class="mx-auto" style="max-width: 320px; height: 160px;">
+									<div class="h-100 rounded overflow-hidden position-relative">
+										<div class="row g-0 h-100">
+											<div class="col-7 bg-primary text-white p-3 d-flex">
+												<h3 class="fs-6 fw-semibold mb-0">
+													Obtenez des alertes si le prix des vols baisse
+												</h3>
+											</div>
+											<div class="col-5 position-relative">
+												<img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Obtenez des alertes si le prix des vols baisse" class="w-100 h-100" style="object-fit: cover;">
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<!-- Slide 3 -->
-						<div class="carousel-item">
-							<div class="mx-auto" style="max-width: 320px; height: 160px;">
-								<div class="h-100 rounded overflow-hidden position-relative">
-									<div class="row g-0 h-100">
-										<div class="col-7 bg-primary text-white p-3 d-flex">
-											<h3 class="fs-6 fw-semibold mb-0">
-												Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde
-											</h3>
-										</div>
-										<div class="col-5 position-relative">
-											<img src="https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde" class="w-100 h-100" style="object-fit: cover;">
+							<!-- Slide 2 -->
+							<div class="carousel-item">
+								<div class="mx-auto" style="max-width: 320px; height: 160px;">
+									<div class="h-100 rounded overflow-hidden position-relative">
+										<div class="row g-0 h-100">
+											<div class="col-7 bg-primary text-white p-3 d-flex">
+												<h3 class="fs-6 fw-semibold mb-0">
+													Vous pouvez faire des économies en combinant vol et hôtel
+												</h3>
+											</div>
+											<div class="col-5 position-relative">
+												<img src="https://images.pexels.com/photos/3769121/pexels-photo-3769121.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vous pouvez faire des économies en combinant vol et hôtel" class="w-100 h-100" style="object-fit: cover;">
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
+							<!-- Slide 3 -->
+							<div class="carousel-item">
+								<div class="mx-auto" style="max-width: 320px; height: 160px;">
+									<div class="h-100 rounded overflow-hidden position-relative">
+										<div class="row g-0 h-100">
+											<div class="col-7 bg-primary text-white p-3 d-flex">
+												<h3 class="fs-6 fw-semibold mb-0">
+													Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde
+												</h3>
+											</div>
+											<div class="col-5 position-relative">
+												<img src="https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde" class="w-100 h-100" style="object-fit: cover;">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 
+						<button class="carousel-control-prev" type="button" data-bs-target="#advantagesCarousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Précédent</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#advantagesCarousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Suivant</span>
+						</button>
 					</div>
 
-					<button class="carousel-control-prev" type="button" data-bs-target="#advantagesCarousel" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Précédent</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#advantagesCarousel" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Suivant</span>
-					</button>
-				</div>
-
-				<!-- Desktop : grille -->
+					<!-- Desktop : grille -->
 				<div class="d-none d-md-block">
 					<div
 						class="row g-3">
@@ -313,9 +306,9 @@
 						<!-- Carte 1 -->
 						<div class="col-md-4">
 							<div class="h-100 rounded overflow-hidden position-relative">
-								<div class="row g-0 h-100">
-									<div class="col-7 bg-primary text-white p-3 d-flex">
-										<h3 class="fs-6 fw-semibold mb-0">
+								<div class="row g-0 h-100 bg-primary">
+									<div class="col-7 text-white p-3 d-flex">
+										<h3 class="texte__small mb-0">
 											Obtenez des alertes si le prix des vols baisse
 										</h3>
 									</div>
@@ -329,9 +322,9 @@
 						<!-- Carte 2 -->
 						<div class="col-md-4">
 							<div class="h-100 rounded overflow-hidden position-relative">
-								<div class="row g-0 h-100">
-									<div class="col-7 bg-primary text-white p-3 d-flex">
-										<h3 class="fs-6 fw-semibold mb-0">
+								<div class="row g-0 h-100 bg-primary">
+									<div class="col-7 text-white p-3 d-flex">
+										<h3 class="texte__small mb-0">
 											Vous pouvez faire des économies en combinant vol et hôtel
 										</h3>
 									</div>
@@ -345,9 +338,9 @@
 						<!-- Carte 3 -->
 						<div class="col-md-4">
 							<div class="h-100 rounded overflow-hidden position-relative">
-								<div class="row g-0 h-100">
-									<div class="col-7 bg-primary text-white p-3 d-flex">
-										<h3 class="fs-6 fw-semibold mb-0">
+								<div class="row g-0 h-100 bg-primary">
+									<div class="col-7 text-white p-3 d-flex">
+										<h3 class="texte__small mb-0">
 											Les membres économisent 10 % ou plus sur plus de 100 000 hôtels dans le monde
 										</h3>
 									</div>
@@ -360,12 +353,12 @@
 
 					</div>
 				</div>
-
+				</div>
+				
 			</section>
 
-		</section>
 
-		<section class="mb-5">
+		<section class="my-4 px-4">
 			<h2 class="fs-3 fw-bold text-dark mb-4">Types de propriétés</h2>
 
 			<!-- MOBILE : CAROUSEL -->

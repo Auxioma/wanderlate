@@ -164,9 +164,32 @@ body {
     background-color: rgba(36, 70, 134, 0.88);
 }
 
+/* ---------------------------------------------------------------
+   Banner
+---------------------------------------------------------------- */
+
 .bg-primary {
     background-color: var(--bleu) !important;
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 1px;
+    border-radius: 0.5rem;
 }
+
+.btn-login {
+    width: auto;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.texte__small {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: var(--white);
+    letter-spacing: normal;
+}
+
+
