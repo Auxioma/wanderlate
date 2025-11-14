@@ -5,9 +5,7 @@
 
 {% block body %}
 	<main class="container">
-
 		<section class="my-4 px-4">
-
 			<div class="container">
 				<ul class="nav nav-tabs justify-content-center nav-fill mb-3" id="myTab" role="tablist">
 
@@ -42,8 +40,6 @@
 				<div class="tab-content p-3 " id="myTabContent">
 					{# Eléments Séjour #}
 					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-						
-						
 						<div class="row g-3 mb-4">
 								<!-- Destination -->
 								<div class="col-md-3">
@@ -177,61 +173,63 @@
 							</div>
 					</div>
 					{# Eléments Vols #}
-					<div class="tab-pane fade p-5 text-center" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-						<button class="btn btn-outline-primary d-flex align-items-center gap-2" disabled>
-    						<i class="bi bi-airplane"></i>
-    						À venir prochainement
-						</button>
-					</div>
-					{# Eléments Voitures #}
-					<div class="tab-pane fade p-5 text-center" id="voitures" role="tabpanel" aria-labelledby="profile-tab">
-						<button class="btn btn-outline-primary d-flex align-items-center gap-2" disabled>
-    						<i class="bi bi-airplane"></i>
-    						À venir prochainement
-						</button>
-					</div>
-					{# Eléments Formules #}
-					<div class="tab-pane fade p-5 text-center" id="formules" role="tabpanel" aria-labelledby="profile-tab">
-						<button class="btn btn-outline-primary d-flex align-items-center gap-2" disabled>
-    						<i class="bi bi-airplane"></i>
-    						À venir prochainement
-						</button>
-					</div>
-					{# Eléments Activités #}
-					<div class="tab-pane fade p-5 text-center" id="activites" role="tabpanel" aria-labelledby="profile-tab">
-						<button class="btn btn-outline-primary d-flex align-items-center gap-2" disabled>
-    						<i class="bi bi-airplane"></i>
-    						À venir prochainement
-						</button>
-					</div>
-
+					<div class="tab-pane fade p-5 text-center" id="profile" role="tabpanel">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center gap-2" disabled>
+						<i class="bi bi-airplane"></i>
+						À venir prochainement
+					</button>
 				</div>
 
+				<div class="tab-pane fade p-5 text-center" id="voitures" role="tabpanel">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center gap-2" disabled>
+						<i class="bi bi-car-front-fill"></i>
+						À venir prochainement
+					</button>
+				</div>
+
+				<div class="tab-pane fade p-5 text-center" id="formules" role="tabpanel">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center gap-2" disabled>
+						<i class="bi bi-box-seam"></i>
+						À venir prochainement
+					</button>
+				</div>
+
+				<div class="tab-pane fade p-5 text-center" id="activites" role="tabpanel">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center gap-2" disabled>
+						<i class="bi bi-activity"></i>
+						À venir prochainement
+					</button>
+				</div>
+				</div>
 			</div>
 		</section>
 
+		
 
-		<section class="bg-primary text-white rounded p-4 p-md-5 mb-4">
-			<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
+		<section class="text-white p-md-5 mb-4">
+			<div class="container bg-primary p-4 rounded">
+				<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
 
-				<div class="d-flex align-items-center text-center text-md-start">
-					<img src="https://a.travel-assets.com/egds/marks/onekey__standard__always_light.svg" alt="OneKey" class="me-3" width="48" height="48">
+						<div class="d-flex align-items-center text-center text-md-start">
+							<img src="https://a.travel-assets.com/egds/marks/onekey__standard__always_light.svg" alt="OneKey" class="me-3" width="48" height="48">
 
-					<div>
-						<p class="small fw-semibold mb-1">
-							Économisez 10% minimum sur plus de 100 000 hôtels dans le monde grâce aux Prix membres.
-						</p>
-						<p class="small fw-semibold d-none d-md-block mb-0">
-							Créez un compte gratuit pour accéder à ces prix exclusifs et bien plus encore.
-						</p>
-					</div>
-				</div>
+							<div>
+								<p class="small fw-semibold mb-1">
+									Économisez 10% minimum sur plus de 100 000 hôtels dans le monde grâce aux Prix membres.
+								</p>
+								<p class="small fw-semibold d-none d-md-block mb-0">
+									Créez un compte gratuit pour accéder à ces prix exclusifs et bien plus encore.
+								</p>
+							</div>
+						</div>
 
-				<button type="button" class="btn btn-danger fw-semibold px-4 py-2 w-100 w-md-auto">
-					Se connecter
-				</button>
+						<button type="button" class="btn btn-danger fw-semibold px-4 py-2 w-100 w-md-auto">
+							Se connecter
+						</button>
 
-			</section>
+				</div>	
+			</div>
+		</section>
 
 			<section
 				class="mb-4 mb-md-5">
