@@ -275,6 +275,51 @@ body {
     background-size: cover;
 }
 
+.hero_container {
+    position: absolute;
+    left: 10;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    max-width: 450px;
+    
+}
+
+.card_booking {
+    background-color: var(--white);
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.title_booking {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    color: var(--dark);
+}
+
+.text_booking {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 410px;
+    color: rgb(55 65 81);
+}
+
+.btn.btn-danger {
+    background-color: var(--red);
+    border: none;
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+}
+
+.btn.btn-danger:hover {
+    background-color: rgba(243, 88, 86, 0.90);
+}
 
 @media (min-width: 768px) {
 
