@@ -79,7 +79,7 @@ body {
 .tab-content {
     background-color: var(--white);
     border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 /* Content séjour */
 .form-label {
