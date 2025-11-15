@@ -193,3 +193,8 @@ body {
 }
 
 
+.card_infos {
+    height: 160px;
+    border-radius: 0.5rem;
+    background-color: var(--bleu);
+}

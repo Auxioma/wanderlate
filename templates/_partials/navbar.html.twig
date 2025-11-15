@@ -4,7 +4,7 @@
       
       <!-- Logo -->
       <div class="d-flex align-items-center">
-        <a href="/" class="fw-bold text-decoration-none">
+        <a href="{{ path('app_main')}}" class="fw-bold text-decoration-none">
           <span class="logo-text-brand-blue">wanderlate</span><span class="logo-text-brand-red">.com</span>
         </a>
       </div>
@@ -85,7 +85,10 @@
           Voyages
         </a>
 
-        <button class="btn btn-link text-body text-decoration-none px-0 hover-brand-red">
+        <button class="btn btn-link text-body text-decoration-none px-0 hover-brand-red"
+                onclick="window.location='{{ path('app_login') }}'"
+                type="button"
+        >
           Se connecter
         </button>
       </nav>
