@@ -5,6 +5,7 @@
 
 {% block body %}
 	<main class="container py-2">
+		{# Navigation #}
 		<section class="my-4 px-4">
 			<div class="container">
 				<ul class="nav nav-tabs justify-content-center nav-fill mb-2" id="myTab" role="tablist">
@@ -202,7 +203,6 @@
 			</div>
 		</section>
 
-		
 		{# Banner #}
 		<section class="my-4 px-4 mb-5">
 			<div class="container">
@@ -232,7 +232,7 @@
 			
 		</section>
 
-		{# A faire #}
+		{# Cards #}
 		<section class="my-4 px-4">
 			<div class="container">
 			<!-- Mobile : carousel -->
@@ -362,149 +362,63 @@
 				</div>
 				</div>
 				
-			</section>
+		</section>
 
-
+		{# Slider des propriétés #}
 		<section class="my-4 px-4">
-			<h2 class="fs-3 fw-bold text-dark mb-4">Types de propriétés</h2>
-
-			<!-- MOBILE : CAROUSEL -->
-			<div id="propertyCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
-				<div
-					class="carousel-inner pb-3">
-
-					<!-- Slide template -->
-					<div class="carousel-item active">
-						<div class="mx-auto" style="width: 190px; height: 260px;">
-							<div class="position-relative rounded overflow-hidden h-100">
-								<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appartement" style="object-fit: cover;">
-								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
-									Appartement
-								</div>
-								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							</div>
-						</div>
+			<h2 class="title">Types de propriétés</h2>
+			<!-- MOBILE: slider tactile -->
+			<div class="slider-container">
+				<div class="slider-track">
+					<div class="property-card">
+						<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="">
+						<div class="label">Appartement</div>
 					</div>
-
-					<div class="carousel-item">
-						<div class="mx-auto" style="width: 190px; height: 260px;">
-							<div class="position-relative rounded overflow-hidden h-100">
-								<img src="https://medias.logishotels.com/property-images/196512/facade/retro/grand/logis-hotel-la-ferme-de-flaran-facade-valence-sur-baise-399662.jpg" class="w-100 h-100" alt="Ferme" style="object-fit: cover;">
-								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
-									Ferme
-								</div>
-								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							</div>
-						</div>
+					<div class="property-card">
+						<img src="https://medias.logishotels.com/property-images/196512/facade/retro/grand/logis-hotel-la-ferme-de-flaran-facade-valence-sur-baise-399662.jpg" alt="">
+						<div class="label">Ferme</div>
 					</div>
-
-					<div class="carousel-item">
-						<div class="mx-auto" style="width: 190px; height: 260px;">
-							<div class="position-relative rounded overflow-hidden h-100">
-								<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/591469727.jpg?k=2c87b78d780a32ea7a14b8c82cbc276e3f8a76482065da6ed5416015c922649b&o=&hp=1" class="w-100 h-100" alt="Bateau-maison" style="object-fit: cover;">
-								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
-									Bateau-maison
-								</div>
-								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							</div>
-						</div>
+					<div class="property-card">
+						<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/591469727.jpg?k=2c87b78d780a32ea7a14b8c82cbc276e3f8a76482065da6ed5416015c922649b&o=&hp=1" alt="">
+						<div class="label">Bateau-maison</div>
 					</div>
-
-					<div class="carousel-item">
-						<div class="mx-auto" style="width: 190px; height: 260px;">
-							<div class="position-relative rounded overflow-hidden h-100">
-								<img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appart'hôtel" style="object-fit: cover;">
-								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
-									Appart'hôtel
-								</div>
-								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							</div>
-						</div>
+					<div class="property-card">
+						<img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400" alt="">
+						<div class="label">Appart’hôtel</div>
 					</div>
-
-					<div class="carousel-item">
-						<div class="mx-auto" style="width: 190px; height: 260px;">
-							<div class="position-relative rounded overflow-hidden h-100">
-								<img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/7c/5d/38/hotel-spa-vilamont.jpg" class="w-100 h-100" alt="Spa" style="object-fit: cover;">
-								<div class="position-absolute bottom-0 start-0 p-2 text-white fw-semibold">
-									Spa
-								</div>
-								<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							</div>
-						</div>
+					<div class="property-card">
+						<img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/7c/5d/38/hotel-spa-vilamont.jpg" alt="">
+						<div class="label">Spa</div>
 					</div>
-
 				</div>
-
-				<button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
-					<span class="visually-hidden">Précédent</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
-					<span class="carousel-control-next-icon"></span>
-					<span class="visually-hidden">Suivant</span>
-				</button>
 			</div>
 
-			<!-- DESKTOP : GRID -->
-			<div class="d-none d-md-grid">
-				<div
-					class="row g-4">
-
-					<!-- Card -->
-					<div class="col-6 col-lg-2">
-						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
-							<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appartement" style="object-fit: cover;">
-							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
-								Appartement
-							</div>
-						</div>
-					</div>
-
-					<div class="col-6 col-lg-2">
-						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
-							<img src="https://medias.logishotels.com/property-images/196512/facade/retro/grand/logis-hotel-la-ferme-de-flaran-facade-valence-sur-baise-399662.jpg" class="w-100 h-100" alt="Ferme" style="object-fit: cover;">
-							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
-								Ferme
-							</div>
-						</div>
-					</div>
-
-					<div class="col-6 col-lg-2">
-						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
-							<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/591469727.jpg?k=2c87b78d780a32ea7a14b8c82cbc276e3f8a76482065da6ed5416015c922649b&o=&hp=1" class="w-100 h-100" alt="Bateau-maison" style="object-fit: cover;">
-							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
-								Bateau-maison
-							</div>
-						</div>
-					</div>
-
-					<div class="col-6 col-lg-2">
-						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
-							<img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-100 h-100" alt="Appart'hôtel" style="object-fit: cover;">
-							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
-								Appart'hôtel
-							</div>
-						</div>
-					</div>
-
-					<div class="col-6 col-lg-2">
-						<div class="position-relative rounded overflow-hidden h-100" style="height: 290px;">
-							<img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/7c/5d/38/hotel-spa-vilamont.jpg" class="w-100 h-100" alt="Spa" style="object-fit: cover;">
-							<div class="position-absolute inset-0" style="background: rgba(0,0,0,0.3);"></div>
-							<div class="position-absolute bottom-0 start-0 p-3 text-white fw-semibold">
-								Spa
-							</div>
-						</div>
-					</div>
-
+			<!-- DESKTOP: GRID -->
+			<div class="property-grid">
+				<div class="property-card">
+					<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="">
+					<div class="label">Appartement</div>
+				</div>
+				<div class="property-card">
+					<img src="https://medias.logishotels.com/property-images/196512/facade/retro/grand/logis-hotel-la-ferme-de-flaran-facade-valence-sur-baise-399662.jpg" alt="">
+					<div class="label">Ferme</div>
+				</div>
+				<div class="property-card">
+					<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/591469727.jpg?k=2c87b78d780a32ea7a14b8c82cbc276e3f8a76482065da6ed5416015c922649b&o=&hp=1" alt="">
+					<div class="label">Bateau-maison</div>
+				</div>
+				<div class="property-card">
+					<img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400" alt="">
+					<div class="label">Appart’hôtel</div>
+				</div>
+				<div class="property-card">
+					<img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/7c/5d/38/hotel-spa-vilamont.jpg" alt="">
+					<div class="label">Spa</div>
 				</div>
 			</div>
 		</section>
+
+		
 		<section
 			class="mb-5">
 
